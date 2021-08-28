@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>fakenews classfier </title>
+
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  
+</head>
+
+<body>
+ <div class="login">
+   <div class = "l2"> 
+	  <h1>News classifier</h1>
+
+    <p>
+      This web app is basically trained on kaggle data set so it can classify corretcly on  any news which is realted that data,
+      it will classify all other news but there is no surity wether they are correct or wrong
+    </p>
+
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predict')}}"method="post">
+    	<input id="textboxid" type="text" name="message" placeholder="type your example message here" required="required" />
+      <br>
+      <br>
+      <br>
+        <button id ="button" type="submit" class="btn btn-primary btn-block btn-large">classify</button>
+    </form>
+
+   <br>
+   <br>
+   {{ prediction_text }}
+  </div>
+ </div>
+</body>
+</html>
